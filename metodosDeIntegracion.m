@@ -87,3 +87,44 @@
                       fprintf('\n\n Utilizando trapecio compuesto resultado  con %2i divisiones  es: %10.9f\n\n', n, calculo);
                       fprintf('\n=======================================================================================\n');
                       
+  case 3
+                    ## SIMPSON SIMPLE------------------------------------------------------------------------------------------------
+                      clc;
+                      calculo = ( b - a ) / 6 *  (  feval(funcion, a) + 4 * feval(funcion, ( a + b ) / 2 ) +  feval(funcion, ( b )) );  
+                      fprintf('\n__________________________________________________________');
+                      fprintf('\n\n Utilizando el método Simpson simple el resultado es : %10.9f\n\n', calculo);
+                      fprintf('\n=======================================================================================\n');
+                      
+            case 4 
+                    ##SIMPSON COMPUESTO------------------------------------------------------------------------------------------
+                      clc;
+                      fprintf('\n__________________________________________________________\n\n');
+                      n = input('Ingrese el # de divisiones requeridas -(PARES)-: ');
+                      h = ( b - a ) / n;
+                      clc;
+                      aux = a ; 
+                      ciclo = 0;
+                        ##calculo
+                        while ( aux <= b )
+                        
+                          if ( aux == a || aux == b )
+                            sumatoria += feval ( funcion, aux );
+                          
+                          else 
+                               if ( rem( ciclo ,2 ) == 0)
+                                  sumatoria += 2 * (feval ( funcion, aux ));
+                                else
+                                  sumatoria += 4 * (feval ( funcion, aux ));
+                                endif
+                          endif
+                        
+                        ciclo += 1;
+                        aux += h;
+                        
+                        endwhile
+                        ## multiplicación
+                        calculo = h / 3 * sumatoria; 
+                        fprintf('\n______________________________________________________________________________');
+                        fprintf('\n\n Utilizando el método Simpson compuesto resultado  con %2i divisiones  es: %10.9f\n\n', n, calculo);
+                        fprintf('\n=======================================================================================\n');
+                        
