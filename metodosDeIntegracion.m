@@ -1,4 +1,4 @@
-## MÉTODOS DE INTEGRACIÓN
+## MÃ‰TODOS DE INTEGRACIÃ“N
 
     ## VARIABLES
     clc;
@@ -10,14 +10,14 @@
     
           ##-------------------ENCABEZADO-----------------
           fprintf('\n__________________________________');
-          fprintf('\n     MÉTODOS DE INTEGRACIONES');
+          fprintf('\n     MÃ‰TODOS DE INTEGRACIONES');
           fprintf('\n__________________________________');
               
           ## ENTRADA---------------------------------------
           
           ##funcion
             fprintf('\n');
-          funcion = input('Ingrese la Función = @(x) (funcion) : ');
+          funcion = input('Ingrese la FunciÃ³n = @(x) (funcion) : ');
           ##a y b
             fprintf('\n');
           a = input('Ingrese el valor de a : ');
@@ -28,8 +28,8 @@
    while( opcion_general == 1 )
           sumatoria = 0;
           aux = 0;
-          ##menú 2-----------------------------
-          fprintf('\n       MENÚ');
+          ##menÃº 2-----------------------------
+          fprintf('\n       MENÃš');
           fprintf('\n____________________');
           fprintf('\n1. Trapecio Simple');
           fprintf('\n____________________');
@@ -41,9 +41,9 @@
           fprintf('\n____________________');
           fprintf('\n5. Simpson Compuesto 3/8');
           fprintf('\n____________________');
-          fprintf('\n6. Salir del sub-menú');
+          fprintf('\n6. Salir del sub-menÃº');
           fprintf('\n____________________\n\n');
-          opcion = input('Ingrese la opción requerida: ');
+          opcion = input('Ingrese la opciÃ³n requerida: ');
           
           ##CASOS--------------------------------------------------------------------------------------------
           switch (opcion)
@@ -81,8 +81,9 @@
                         
                       endwhile
                       
-                     ## multiplicación
+                     ## multiplicaciÃ³n
                       calculo = h / 2 * sumatoria; 
                       fprintf('\n______________________________________________________________________________');
                       fprintf('\n\n Utilizando trapecio compuesto resultado  con %2i divisiones  es: %10.9f\n\n', n, calculo);
                       fprintf('\n=======================================================================================\n');
+                      
