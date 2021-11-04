@@ -87,7 +87,7 @@
                       fprintf('\n\n Utilizando trapecio compuesto resultado  con %2i divisiones  es: %10.9f\n\n', n, calculo);
                       fprintf('\n=======================================================================================\n');
                       
-  case 3
+            case 3
                     ## SIMPSON SIMPLE------------------------------------------------------------------------------------------------
                       clc;
                       calculo = ( b - a ) / 6 *  (  feval(funcion, a) + 4 * feval(funcion, ( a + b ) / 2 ) +  feval(funcion, ( b )) );  
@@ -127,4 +127,60 @@
                         fprintf('\n______________________________________________________________________________');
                         fprintf('\n\n Utilizando el método Simpson compuesto resultado  con %2i divisiones  es: %10.9f\n\n', n, calculo);
                         fprintf('\n=======================================================================================\n');
+            case 5 
+                    ##SIMPSON COMPUESTO 3/8--------------------------------------------------------------------------------------------------
+                      clc;
+                      fprintf('\n__________________________________________________________\n\n');
+                      n = input('Ingrese el # de divisiones requeridas -( MÚLTIPLOS DE 3 )-: ');
+                      h = ( b - a ) / n;
+                      clc; 
+                      aux = a ; 
+                      ciclo = 0;
+                        ##calculo
+                        while ( aux <= b )
                         
+                          if ( aux == a || aux == b )
+                            sumatoria += feval ( funcion, aux );
+                          
+                          else 
+                               if ( rem( ciclo ,3 ) == 0)
+                                  sumatoria += 2 * (feval ( funcion, aux ));
+                                else
+                                  sumatoria += 3 * (feval ( funcion, aux ));
+                                endif
+                          endif
+                        
+                        ciclo += 1;
+                        aux += h;
+                        
+                      endwhile
+                      
+                      ## multiplicación
+                        calculo = ( 3 * h ) / 8 * sumatoria; 
+                        fprintf('\n______________________________________________________________________________');
+                        fprintf('\n\n Utilizando el método Simpson compuesto 3/8 resultado  con %2i divisiones  es: %10.9f\n\n', n, calculo);
+                        fprintf('\n=======================================================================================\n');
+            case 6    
+                      clc;
+                      ##salir
+          endswitch
+          
+          ## GRÁFICA --------------------------------------------------------------------------
+          funcion =vectorize(funcion);
+          funcion =vectorize(funcion);
+          ezplot(funcion);grid;
+    
+    ##menú 1-----------------------------
+    fprintf('\n\n\n       MENÚ');
+    fprintf('\n____________________');
+    fprintf('\n1. Seguir');
+    fprintf('\n____________________');
+    fprintf('\n2. SALIR');
+    fprintf('\n____________________');
+    fprintf('\n\n\n !!Si presiona seguir se usará la funcion y los valores de a y b ya introducidos!!\n\n\n');
+    opcion_general = input('Ingrese la opción requerida: ');
+    clc;
+    endwhile
+    
+    disp(fin);
+  
